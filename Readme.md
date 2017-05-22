@@ -1,6 +1,6 @@
-# Wikipedia On This Day Scraper Bot | Python | [![Build Status](https://travis-ci.org/mkbhatt/wikipedia-on-this-day-bot.svg?branch=master)](https://travis-ci.org/mkbhatt/wikipedia-on-this-day-bot)
+# Wikipedia "On This Day" Sample Bot | Python | [![Build Status](https://travis-ci.org/mkbhatt/wikipedia-on-this-day-bot.svg?branch=master)](https://travis-ci.org/mkbhatt/wikipedia-on-this-day-bot)
 
-Wikipedia Bot Crawls "On This Day" - Section Of Wikipedia Page And Outputs A Scrapped Formatted JSON Content For Multiple Usage 
+Wikipedia Sample Bot Crawls "On This Day" Section Of Wikipedia Page And Outputs A Scrapped Formatted JSON Content For Multiple Usage
 
 ## This Sample BOT Is Useful For Following People
 
