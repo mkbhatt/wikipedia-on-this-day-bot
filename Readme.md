@@ -12,10 +12,11 @@ Wikipedia Bot Crawls "On This Day" - Section Of Wikipedia Page And Outputs A Scr
 
 ## What This Sample BOT Covers For You
 
-* Crawling & Scraping Of Data 
+* Crawling Of Page
+* Scraping Of Page Data
 * OOP Programming
-* MVC Code
-* Model Code
+* Regular Expression
+* JSON
 
 ### Prerequisites
 
