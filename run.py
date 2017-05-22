@@ -105,7 +105,7 @@ class WikipediaBot(object):
 			self.text(92,"\n\n   BOT : Starting Wikipedia Crawl...\n")
 			self.text(92,"\n   BOT : Crawling...\n")
 			self.log.info("BOT : Scraper Function Started")
-			r = requests.get(self.host,headers=self.browser_headers)
+			r = self.r_session.get(self.host,headers=self.browser_headers)
 			data = r.content
 			# LXML ERROR MAY RISE UNCAUGHT CHECK WHEN OS CHANGE
 			parse = BeautifulSoup(str(data),'lxml',from_encoding="utf-8")
@@ -147,7 +147,7 @@ class WikipediaBot(object):
 					title = str(link['title'].encode('ascii', 'ignore'))
 					# Fail Safe Encodes '#' => %23 As Requests Library Does Not Do That Automatically
 					encoded_url = re.sub('#','%23',url.replace("/wiki/",''))
-					r = requests.get(self.img_url%(encoded_url,self.img_size_approx),headers=self.browser_headers)
+					r = self.r_session.get(self.img_url%(encoded_url,self.img_size_approx),headers=self.browser_headers)
 					data = json.loads(r.content)
 					# FAIL SAFE PAGE KEY ERROR WIKI API
 					# Break The Loop And Move Forward
@@ -203,7 +203,7 @@ class WikipediaBot(object):
 			# ////////////////////////////////////////////////////////////////////////////////
 
 			temp_highlight_json={} 
-			r = requests.get(self.host,headers=self.browser_headers)
+			r = self.r_session.get(self.host,headers=self.browser_headers)
 			data = r.content
 			parse = BeautifulSoup(str(data),'lxml',from_encoding='utf-8')
 			div = parse.find("div", {"id": "mp-otd"})
@@ -252,7 +252,7 @@ class WikipediaBot(object):
 				url  = link['url']
 				# Fail Safe Encodes '#' => %23 As Requests Library Does Not Do That Automatically
 				encoded_url = re.sub('#','%23',url.replace("/wiki/",''))
-				r = requests.get(self.img_url%(encoded_url,self.img_size_approx),headers=self.browser_headers)
+				r = self.r_session.get(self.img_url%(encoded_url,self.img_size_approx),headers=self.browser_headers)
 				data = json.loads(r.content)
 			
 				# print str(data)+str('\n')
