@@ -129,7 +129,11 @@ class WikipediaBot(object):
 						link  = temp.a['href']
 						bulk_link.append({'title':title,'url':link,'img_w':False,'img_h':False,'img_size':False,'ext_type':False,'img':False})
 
-					self.scrape_set.update({elem: {'year':year[0],'content':str(content),'links':bulk_link}})
+					# Certain Days Wikipedia Tends To Shows Less Data, Fail Safe Check | Break And Continue
+					try:
+						self.scrape_set.update({elem: {'year':year[0],'content':str(content),'links':bulk_link}})
+					except:
+						break
 
 					with open('scraped_data/temp_scraped_data.json','wb+') as content:
 						content.write(json.dumps(self.scrape_set))
