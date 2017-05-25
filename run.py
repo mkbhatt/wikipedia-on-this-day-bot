@@ -311,7 +311,7 @@ class WikipediaBot(object):
 
 
 	def credits(self):
-		credit_str = '| Author : MR. KEYUR BHATT | Email : mkbhatt99 [at] gmail [dot] com | Website : http://mkbhatt.herokuapp.com |'
+		credit_str = '| Author : MR. KEYUR ( MAVERICK ) BHATT | Email : mkbhatt99 [at] gmail [dot] com | Website : http://mkbhatt.herokuapp.com |'
 		print "*"*len(credit_str)
 		print credit_str
 		print "*"*len(credit_str)
