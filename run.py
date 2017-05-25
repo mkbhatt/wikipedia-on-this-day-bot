@@ -308,9 +308,18 @@ class WikipediaBot(object):
 			traceback.print_exc()
 			print '-'*60
 			sys.exit(1)
+
+
+	def credits(self):
+		credit_str = '| Author : MR. KEYUR BHATT | Email : mkbhatt99 [at] gmail [dot] com | Website : http://mkbhatt.herokuapp.com |'
+		print "*"*len(credit_str)
+		print credit_str
+		print "*"*len(credit_str)
+		print '\n\n'
 	# ////////////////////////////////////////////////////////////////////
 
 
 if __name__ == "__main__":
 	wiki_bot = WikipediaBot(settings['scraper']['host'],settings['scraper']['crawl_host'],settings['scraper']['save_dir'],settings['scraper']['img_dir'],settings['scraper']['log_dir'],settings['scraper']['log_file'],str(settings['scraper']['img_size_approx']),settings['scraper']['browser_headers'])
 	wiki_bot.scraper()
+	wiki_bot.credits()
